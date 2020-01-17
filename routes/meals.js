@@ -24,11 +24,12 @@ router.post('/', async (req, res, next) => {
         dateOfMessage = dateSplitted[0]
     }
     // if mealFilters isn't already a array, we make one out of it
-    if (!Array.isArray(mealFilters)) {
-        mealFilters = [mealFilters]
-    } else if (mealFilters === undefined) {
-        // if we don't have any filters, we create an empty array
+    if (mealFilters === undefined) {
+        console.log("Bin in undefined")
         mealFilters = ['']
+    } else if (!Array.isArray(mealFilters)) {
+        // if we don't have any filters, we create an empty array        
+        mealFilters = [mealFilters]
     }
     // fetch the meals and filter them
     let meals = await mealsOfSpecificDayService.filterMeals(

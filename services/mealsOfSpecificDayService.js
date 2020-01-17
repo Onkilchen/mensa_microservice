@@ -14,7 +14,7 @@ module.exports = {
                 `https://openmensa.org/api/v2/canteens/49/days/${date}/meals/`
             )
 
-            console.log(mealsOfSpecificDay.data)
+            //console.log(mealsOfSpecificDay.data)
             //we use a set, because it only holds unique values and don't get a meal twice
             let filteredMeals = new Set([])
             //boolean required for filtering
@@ -23,16 +23,17 @@ module.exports = {
             mealsOfSpecificDay.data.forEach(meal => {
                 //...and for each meal, loop over the filter words
                 for (i in mealFilters) {
+                    mealFilter = mealFilters[i].toLowerCase()
                     if (
                         //check if notes array contains a filter word
-                        meal.notes.some(note => note.includes(mealFilters[i]))
+                        meal.notes.some(note => note.toLowerCase().includes(mealFilter))
                     ) {
                         //if so, set the boolean to true
                         containsAllFilters = true
-                    } else if(meal.name.includes(mealFilters[i])){
+                    } else if(meal.name.toLowerCase().includes(mealFilter)){
                          //if so, set the boolean to true
                          containsAllFilters = true
-                    } else if(meal.category.includes(mealFilters[i])){
+                    } else if(meal.category.toLowerCase().includes(mealFilter)){
                         //if so, set the boolean to true
                         containsAllFilters = true
                     } else{
