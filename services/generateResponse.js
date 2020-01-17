@@ -9,7 +9,7 @@ module.exports = {
 
         // if the date is on a day where the mensa is closed, fill messageText accordingly and return it
         if (meals.length === 2) {
-            messageText = 'Die Mensa hat an Wochenende nicht geöffnet!'
+            messageText = 'Tut mir leid, ich konnte leider keine Gerichte finden.'
             return messageText
         } else {
             /**

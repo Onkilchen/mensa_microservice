@@ -13,6 +13,8 @@ module.exports = {
             let mealsOfSpecificDay = await axios.get(
                 `https://openmensa.org/api/v2/canteens/49/days/${date}/meals/`
             )
+
+            console.log(mealsOfSpecificDay.data)
             //we use a set, because it only holds unique values and don't get a meal twice
             let filteredMeals = new Set([])
             //boolean required for filtering
@@ -27,7 +29,13 @@ module.exports = {
                     ) {
                         //if so, set the boolean to true
                         containsAllFilters = true
-                    } else {
+                    } else if(meal.name.includes(mealFilters[i])){
+                         //if so, set the boolean to true
+                         containsAllFilters = true
+                    } else if(meal.category.includes(mealFilters[i])){
+                        //if so, set the boolean to true
+                        containsAllFilters = true
+                    } else{
                         //if not, set boolean to false and get out of the loop, because then we don't need that meal
                         //in our response
                         containsAllFilters = false
