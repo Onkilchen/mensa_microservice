@@ -11,13 +11,13 @@ A microservice for a Chatbot developed at the Beuth University of Applied Scienc
     - [Cloning](#cloning)
     - [Installing](#installing)
   - [Overview](#overview)
-  - [Structure](#structure)
-  - [Functionalities](#functionalities)
-  - [Project structure](#project-structure)
-    - [The services-folder](#the-services-folder)
-      - [generateResponse.js](#generateresponsejs)
-      - [mealsOfSpecificDay.js](#mealsofspecificdayjs)
-    - [The routes-folder](#the-routes-folder)
+    - [Structure](#structure)
+    - [Functionalities](#functionalities)
+    - [Project structure](#project-structure)
+      - [The services-folder](#the-services-folder)
+        - [generateResponse.js](#generateresponsejs)
+        - [mealsOfSpecificDay.js](#mealsofspecificdayjs)
+      - [The routes-folder](#the-routes-folder)
   - [Further Development](#further-development)
   - [Further Reading](#further-reading)
   - [Built With](#built-with)
@@ -63,29 +63,29 @@ If you direct your browser to [localhost](http://localhost:8000/meals), you will
 
 The mensa microservice is basically a Node-Express-Backend. Incoming requests are checked and specifically handled.
 
-## Structure
+### Structure
 
 The microservice consists of four folders containing several scripts, which are designated to perform certain tasks. Then we have the **services**-folder containing files, that consist of functions useful to process incoming requests from the chatbot and to generate a formatted answer-string, that contains the requested meal-menu of a specific day from the Beuth mensa. The **routes**-folder consists of all the routes, that can be addressed. In the next chapters we will get into more details about the scripts and their functions.
 
-## Functionalities
+### Functionalities
 
 On request, this microservice makes calls to the [OpenMensa API](https://doc.openmensa.org/api/v2/). The received data is processed by services that give a list of filtered and unfiltered meals of the mensa of the Beuth University for Applied Sciences. Mainly this service was built throughout the Masterprojekt module that is a mandatory part of the media informatics master course of the Beuth University for Applied Sciences.
 
-## Project structure
+### Project structure
 
-### The services-folder
+#### The services-folder
 
 This folder consists of several services, that perform specific tasks for the microservice.
 
-#### generateResponse.js
+##### generateResponse.js
 
 Creates a nicely formatted string from a mensa-JSON-object and caches it.
 
-#### mealsOfSpecificDay.js
+##### mealsOfSpecificDay.js
 
 Makes a request to the OpenMensa API and filters by given entities (for instance vegan and vegetarian meals only).
 
-### The routes-folder
+#### The routes-folder
 
 This folder contains all the routes, that can be addressed on this server. The `index.js` manages all the routes. We've only got two routes in our project. The `/swagger`-route leads you to the swagger documentation of this project.
 
