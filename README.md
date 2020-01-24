@@ -112,11 +112,11 @@ This is still a work in progress, so functionalities and structure might still c
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/<you>/<your-repo>/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Onkilchen/mensa_service/tags).
 
 ## Authors
 
 - **Tolga Karaoglu**
 - **Steven Sobkowski**
 
-See also the list of [contributors](https://github.com/<you>/<your-repo>/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Onkilchen/mensa_service/contributors) who participated in this project.
