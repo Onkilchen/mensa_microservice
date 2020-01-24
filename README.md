@@ -33,7 +33,7 @@ A microservice for a Chatbot developed at the Beuth University of Applied Scienc
 
 ### Cloning
 
-Get the source code by cloning its repository via https: [mensa_microservice](https://github.com/beuthbot/mensa_microservice)
+Get the source code by cloning its repository via https: [mensa_microservice](https://github.com/Onkilchen/mensa_microservice.git)
 
 ### Installing
 
@@ -107,11 +107,11 @@ This is still a work in progress, so functionalities and structure might still c
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags](https://github.com/Onkilchen/mensa_service/tags) on this repository.
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags](https://github.com/Onkilchen/mensa_microservice/tags) on this repository.
 
 ## Authors
 
 - **Tolga Karaoglu**
 - **Steven Sobkowski**
 
-See also the list of [contributors](https://github.com/Onkilchen/mensa_service/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Onkilchen/mensa_microservice/contributors) who participated in this project.
