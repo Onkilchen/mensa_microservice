@@ -32,7 +32,7 @@ A microservice for a Chatbot developed at the Beuth University of Applied Scienc
 
 ### Cloning
 
-Get the source code by cloning its repository via https: [mensa_microservice] (https://github.com/Onkilchen/mensa_microservice.git)
+Get the source code by cloning its repository via https: [mensa_microservice](https://github.com/Onkilchen/mensa_microservice.git)
 
 ### Installing
 
