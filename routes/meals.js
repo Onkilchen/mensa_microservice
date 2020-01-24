@@ -14,21 +14,21 @@ router.post('/', async (req, res, next) => {
     let message = req.body
     // the date, for which we should fetch the meals. Format-ISO: yyyy-mm-dd or dd-mm-yyyy
     let dateOfMessage = message.evaluatedMessage.date
-    let dateOfMessageSplitted = dateOfMessage.split("T")
+    let dateOfMessageSplitted = dateOfMessage.split('T')
     dateOfMessage = dateOfMessageSplitted[0]
     // the items, after which we should filter the meals. E.g. vegetarian, vegan,...
     let mealFilters = message.evaluatedMessage.filter
     // without a date, we can't fetch any meals
     if (dateOfMessage === undefined || dateOfMessage === '') {
-        dateSplitted = new Date().toISOString().split("T")
+        dateSplitted = new Date().toISOString().split('T')
         dateOfMessage = dateSplitted[0]
     }
     // if mealFilters isn't already a array, we make one out of it
     if (mealFilters === undefined) {
-        console.log("Bin in undefined")
+        // console.log("Bin in undefined")
         mealFilters = ['']
     } else if (!Array.isArray(mealFilters)) {
-        // if we don't have any filters, we create an empty array        
+        // if we don't have any filters, we create an empty array
         mealFilters = [mealFilters]
     }
     // fetch the meals and filter them
@@ -37,9 +37,7 @@ router.post('/', async (req, res, next) => {
         dateOfMessage
     )
     // generate an answer out of the filtered meals
-    let answerText = await generatedMessage.generateSpecificDayAnswer(
-        meals
-    )
+    let answerText = await generatedMessage.generateSpecificDayAnswer(meals)
     // extend the message object, with an answer-attribute containing the response and a
     // history-property, which can be extended by the other services for debugging purposes.
     message.answer = { content: answerText, history: 'MensaService' }
